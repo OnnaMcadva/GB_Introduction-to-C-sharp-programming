@@ -1,0 +1,100 @@
+/* Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+456 -> 5
+782 -> 8
+918 -> 1 */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace HelloWorld
+{
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+		  Console.Write("Введите трехзначное число: ");
+      int numberThreeDig = Convert.ToInt32(Console.ReadLine());
+      if (numberThreeDig < 100 || numberThreeDig > 999)
+        {
+        Console.WriteLine("Введенное число не является трехзначным.");
+        }
+      else
+        {
+        numberThreeDig = numberThreeDig / 10;
+        numberThreeDig = numberThreeDig % 10;
+        Console.WriteLine("Bторая цифра введенного числа = " + numberThreeDig);
+      }
+		}
+	}
+}
+
+
+/* Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+645 -> 5
+78 -> третьей цифры нет
+32679 -> 6 */
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace HelloWorld
+{
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+		  Console.Write("Введите число: ");
+      int number = Convert.ToInt32(Console.ReadLine());
+      if (number < 100)
+        {
+        Console.WriteLine("Третьей цифры нет");
+        }
+      else
+        {
+        number = number / 100;
+        number = number % 10;
+        Console.WriteLine("Третья цифра введенного числа = " + number);
+      }
+		}
+	}
+}
+
+
+/* Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+6 -> да
+7 -> да
+1 -> нет */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace HelloWorld
+{
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+		  Console.Write("Введите цифру, обозначающую день недели (1-7), а я скажу является ли этот день выходным: ");
+      int numberDay = Convert.ToInt32(Console.ReadLine());
+      if (numberDay == 6 || numberDay == 7)
+        {
+        Console.WriteLine("Даааа!");
+        }
+      else if (numberDay <= 5 && numberDay >= 1)
+        {
+        Console.WriteLine("нет...");
+      }
+      else
+              {
+        Console.WriteLine("Это не день недели");
+      }
+		}
+	}
+}
